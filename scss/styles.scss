@@ -5,9 +5,13 @@ $base-font-size: .85rem;
 $border: 1px solid #E6EAEA;
 $submit-color: #49c5b6;
 $top-bar-height: 70px;
-
-
-
+$content-margin: 0 1rem 1.9rem 1rem;
+$hover-text: #A6ABAB;
+$hover-background: #fff;
+$single-col: 611px;
+$double-col: 1146px;
+$triple-col: 1461px;
+$quad-col-responsive: 1940px;
 
 // STYLES
 
@@ -35,7 +39,7 @@ body {
 }
 
 
-.menu {
+.menu, {
   display: flex;
   align-items: center;
   border-right: $border;
@@ -43,6 +47,14 @@ body {
   height: 70px;
   padding-left: 20px;
 }
+
+.search {
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .fas {
   font-size: 1.2rem;
   margin-right: 10px;
@@ -79,9 +91,33 @@ body {
 .filter {
   top: 70px;
   z-index: 99;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
 }
 
+.filterby  {
+  border-right: $border;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  text-transform: uppercase;
 
+}
+
+.filterby:hover {
+  background-color: $hover-background;
+  color: $hover-text;
+}
+
+.filter-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
 
 .content {
   display: flex;
@@ -101,7 +137,7 @@ body {
   height: 443px;
   background-color: lightblue;
   border: 1px solid #f00;
-  margin: 0 .7rem 1.9rem .7rem;
+  margin: $content-margin;
   font-size: 4rem;
   display: flex;
   align-items: center;
@@ -111,30 +147,37 @@ body {
   }
 }
 
-@media screen and (max-width: 1940px) {
+
+@media screen and (max-width: $quad-col-responsive)
+ { // quad col responsive
   .box-item {
     width: 20%;
   }
 }
 
-@media screen and (max-width: 1461px) {
+@media screen and (max-width: $triple-col) { // triple col
   .box-item {
-    width: 30%;
-    margin: 0 1rem 1.9rem 1rem;
-  }
-.content {
+    width: 30%;  }
+  .content {
   padding: 0 2rem 0 4rem;
-}
+    }
 }
 
-@media screen and (max-width: 1146px) {
+@media screen and (max-width: $double-col) { // double col
   .box-item {
     width: 43%;
-    margin: 0 1rem 1.9rem 1rem;
-
   }
+  .login {
+    display: none;
+  }
+  .search {
+    position: absolute;
+    right: 190px;
+    top: 27px;
+  }
+
 }
-@media screen and (max-width: 611px) {
+@media screen and (max-width: $single-col) {  // single col
   .box-item {
     width: 100%;
     margin: 0 0 1.9rem 0;

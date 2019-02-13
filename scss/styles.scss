@@ -2,28 +2,98 @@
 $page-bgcolor: #f4f7f6;
 $base-font: Helvetica, Arial, sans-serif;
 $base-font-size: .85rem;
-$border-color: #E6EAEA;
+$border: 1px solid #E6EAEA;
+$submit-color: #49c5b6;
+$top-bar-height: 70px;
+
+
 
 
 // STYLES
 
 body {
   background: $page-bgcolor;
+  margin: 0;
+  padding: 0;
   font: {
     family: $base-font;
     size: $base-font-size;
   }
 
 }
+.banner, .filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: $border;
+  height: $top-bar-height;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  background-color: $page-bgcolor;
+}
+
+
+.menu {
+  display: flex;
+  align-items: center;
+  border-right: $border;
+  width: 95px;
+  height: 70px;
+  padding-left: 20px;
+}
+.fas {
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+.right-nav-box, .left-nav-box {
+  display: flex;
+  flex-direction: row;
+}
+
+.login {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 20px;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+}
+
+.submit {
+  width: 190px;
+  height: 70px;
+  background-color: $submit-color;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter {
+  top: 70px;
+  z-index: 99;
+}
+
+
 
 .content {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: stretch;
+  position: relative;
+  top: 190px;
   margin: 0 auto 0 auto;
+  padding: 0 2rem 0 2rem;
   max-width: 1880px;
-  border: 1px solid purple;
+  // border: 1px solid purple;
 }
 
 .box-item {
@@ -31,7 +101,7 @@ body {
   height: 443px;
   background-color: lightblue;
   border: 1px solid #f00;
-  margin: 0 1.9rem 1.9rem 0;
+  margin: 0 .7rem 1.9rem .7rem;
   font-size: 4rem;
   display: flex;
   align-items: center;
@@ -47,19 +117,27 @@ body {
   }
 }
 
-@media screen and (max-width: 1450px) {
+@media screen and (max-width: 1461px) {
   .box-item {
     width: 30%;
+    margin: 0 1rem 1.9rem 1rem;
   }
+.content {
+  padding: 0 2rem 0 4rem;
+}
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1146px) {
   .box-item {
-    width: 44%;
+    width: 43%;
+    margin: 0 1rem 1.9rem 1rem;
+
   }
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 611px) {
   .box-item {
-    width: 98%;
+    width: 100%;
+    margin: 0 0 1.9rem 0;
+
   }
 }
